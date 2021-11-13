@@ -1,0 +1,19 @@
+{
+  "name": "vue-webpack-config",
+  "version": "1.0.0",
+  "description": "Configuration of Webpack to work with VueJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://webdevelopua.github.io/"
+  },
+  "keywords": [
+    "vue3",
+    "webpack"
+  ],
+  "author": "",
+  "license": "ISC"
+}
