@@ -286,3 +286,37 @@ module.exports = {
 }
 
 ```
+
+## [ESLint](https://eslint.org) [rules](https://eslint.org/docs/rules/) + [demo rules config](https://eslint.org/demo)
+
+``` 
+npm i eslint -g
+
+eslint --version
+eslint dist/bundle.js
+eslint index.js
+
+eslint --init
+```
+
+**.eslintrc.json**
+
+```json5 
+{
+  "extends": "eslint:recommended",
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  }
+}
+
+
+```
+
+* [Fixing ESLint says “Parsing error: The keyword ‘let’ is reserved.”](https://www.garysieling.com/blog/visual-studio-code-fixing-eslint-says-parsing-error-keyword-let-reserved/)
+
+* [WebStorm ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)

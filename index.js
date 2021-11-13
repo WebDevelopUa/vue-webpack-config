@@ -20,3 +20,8 @@ document.getElementById('sum').innerHTML = someText
 document.getElementById('replace').innerHTML = replaceText
 document.getElementById('replaced').innerHTML = replacedText
 document.body.appendChild(paragraph)
+
+// ESLint test sample
+let addFive = 'Add 5'
+document.write(addFive)
+
