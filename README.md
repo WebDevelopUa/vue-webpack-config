@@ -41,8 +41,8 @@ Demo: [GitHub Pages](https://webdevelopua.github.io/vue-webpack-config/)
     * ```<script src="https://unpkg.com/vue@next"></script> ```
     * ``` <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>```
 
-- Vue runtime (without compiler)  
-  * ```<script src="https://unpkg.com/vue@3.2.21/dist/vue.runtime.global.js"></script> ```
+- Vue runtime (without compiler)
+    * ```<script src="https://unpkg.com/vue@3.2.21/dist/vue.runtime.global.js"></script> ```
 
 ----
 
@@ -55,7 +55,7 @@ npm init
 npm i webpack webpack-cli --save-dev
 ```
 
-webpack.config.js
+**webpack.config.js**
 
 ``` 
 module.exports = {
@@ -81,3 +81,39 @@ or
 npm run dev
 npm run prod
 ```
+
+## [Babel Presets](https://babeljs.io/docs/en/presets):
+
+* @babel/preset-env for compiling ES2015+ syntax
+* @babel/preset-typescript for TypeScript
+* @babel/preset-react for React
+* @babel/preset-flow for Flow
+
+``` 
+npm i @babel/core  @babel/preset-env babel-loader --save-dev
+```
+
+**webpack.config.js**
+
+``` 
+module.exports = {
+    entry: "./index.js",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/dist"
+    },
+    mode: "development",
+    module: {
+        rules: [
+            {
+                test: /\.js%/,
+                exclude: /(node_modules)/,
+                use: 'babel-loader'
+            }
+        ]
+    }
+}
+
+```
+
+**.babelrc**

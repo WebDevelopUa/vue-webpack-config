@@ -1,1 +1,1 @@
-(()=>{let e=document.createElement("h2");e.innerText="Custom text from: dist/bundle.js",document.body.appendChild(e)})();
+(()=>{let e=document.createElement("p"),n=null,t=n??=2e6,l=n||=t,d=n&&=l,r=`Expression:\n ${t} + ${l} + ${d} = ${t+l+d}`,m="The quick brown fox jumps over the lazy DOG. If the DOG reacted, was it really lazy?",o=m.replaceAll(/dog/gi,"XXX");e.innerText="Custom text from: dist/bundle.js",document.getElementById("sum").innerHTML=r,document.getElementById("replace").innerHTML=m,document.getElementById("replaced").innerHTML=o,document.body.appendChild(e)})();
