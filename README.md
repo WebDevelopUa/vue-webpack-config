@@ -36,10 +36,48 @@ Demo: [GitHub Pages](https://webdevelopua.github.io/)
 
 ## [Vue builds](https://ru.vuejs.org/v2/guide/installation.html#%D0%9E%D0%B1%D1%8A%D1%8F%D1%81%D0%BD%D0%B5%D0%BD%D0%B8%D0%B5-%D1%80%D0%B0%D0%B7%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D1%85-%D1%81%D0%B1%D0%BE%D1%80%D0%BE%D0%BA)
 
+- Vue global is a full build (compiler + runtime)
+
+    * ```<script src="https://unpkg.com/vue@next"></script> ```
+    * ``` <script src="https://unpkg.com/vue@3.2.21/dist/vue.global.js"></script>```
+
+- Vue runtime (without compiler)  
+  * ```<script src="https://unpkg.com/vue@3.2.21/dist/vue.runtime.global.js"></script> ```
+
 ----
 
 ## [Webpack](https://webpack.js.org)
 
 ```
+npm install -g npm
+npm audit fix
 npm init 
+npm i webpack webpack-cli --save-dev
+```
+
+webpack.config.js
+
+``` 
+module.exports = {
+    entry: "./index.js",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/dist"
+    },
+    mode: "development"
+}
+
+```
+
+Run:
+
+``` 
+./node_modules/.bin/webpack
+```
+
+or
+
+``` 
+npm run dev
+npm run prod
 ```
