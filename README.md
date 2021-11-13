@@ -1,7 +1,7 @@
 Vue 3
 ---
 
-Demo: [GitHub Pages](https://webdevelopua.github.io/)
+Demo: [GitHub Pages](https://webdevelopua.github.io/vue-webpack-config/)
 
 - [What is Vue.js?](https://v3.vuejs.org/guide/introduction.html)
 - [Vue CDNJS](https://cdnjs.com/libraries/vue)
