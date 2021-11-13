@@ -1,3 +1,5 @@
+import './main.scss'
+
 let paragraph = document.createElement('p')
 
 // Just like the way we did with &&, we can do with || and ??.
@@ -12,7 +14,7 @@ let someText = `Expression:
 let replaceText = 'The quick brown fox jumps over the lazy DOG. If the DOG reacted, was it really lazy?'
 let replacedText = replaceText.replaceAll(/dog/ig, 'XXX')
 
-paragraph.innerText = 'Custom text from: dist/bundle.js'
+paragraph.innerText = 'Custom text from: dist/bundle.js and styled using SASS'
 
 document.getElementById('sum').innerHTML = someText
 document.getElementById('replace').innerHTML = replaceText

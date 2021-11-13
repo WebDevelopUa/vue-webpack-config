@@ -90,7 +90,7 @@ npm run prod
 * @babel/preset-flow for Flow
 
 ``` 
-npm i @babel/core  @babel/preset-env babel-loader --save-dev
+npm i @babel/core @babel/preset-env babel-loader --save-dev
 ```
 
 **webpack.config.js**
@@ -117,3 +117,87 @@ module.exports = {
 ```
 
 **.babelrc**
+
+## [SASS](https://sass-lang.com/)
+
+``` 
+npm i node-sass sass-loader css-loader style-loader --save-dev
+```
+
+**webpack.config.js**
+
+``` 
+module.exports = {
+    entry: "./index.js",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/dist"
+    },
+    mode: "production",
+    module: {
+        rules: [
+            {
+                test: /\.js%/,
+                exclude: /(node_modules)/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
+    }
+}
+
+```
+
+[MiniCssExtractPlugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)
+
+``` 
+npm i mini-css-extract-plugin --save-dev
+```
+
+**webpack.config.js**
+
+``` 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+    entry: "./index.js",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/dist"
+    },
+    mode: "production",
+    module: {
+        rules: [
+            {
+                test: /\.js%/,
+                exclude: /(node_modules)/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // Uncomment 'style-loader' to add style to HTML Head
+                    // 'style-loader',
+                    'css-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'main.css'
+        })
+    ],
+    watch: true
+}
+
+```
