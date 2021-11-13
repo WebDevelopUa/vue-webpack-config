@@ -21,6 +21,7 @@ module.exports = {
                     // Uncomment 'style-loader' to add style to HTML Head
                     // 'style-loader',
                     'css-loader',
+                    'postcss-loader',
                     'sass-loader'
                 ]
             }

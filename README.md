@@ -57,7 +57,7 @@ npm i webpack webpack-cli --save-dev
 
 **webpack.config.js**
 
-``` 
+```json5 
 module.exports = {
     entry: "./index.js",
     output: {
@@ -95,7 +95,7 @@ npm i @babel/core @babel/preset-env babel-loader --save-dev
 
 **webpack.config.js**
 
-``` 
+```json5 
 module.exports = {
     entry: "./index.js",
     output: {
@@ -118,7 +118,7 @@ module.exports = {
 
 **.babelrc**
 
-``` 
+```json5 
 {
   "presets": [
     "@babel/preset-env"
@@ -135,7 +135,7 @@ npm i node-sass sass-loader css-loader style-loader --save-dev
 
 **webpack.config.js**
 
-``` 
+```json5 
 module.exports = {
     entry: "./index.js",
     output: {
@@ -172,7 +172,7 @@ npm i mini-css-extract-plugin --save-dev
 
 **webpack.config.js**
 
-``` 
+```json5 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -207,6 +207,82 @@ module.exports = {
         })
     ],
     watch: true
+}
+
+```
+
+## [Post CSS](https://postcss.org/) + [PostCSS.parts](https://www.postcss.parts/)
+
+``` 
+npm i postcss postcss-loader --save-dev
+npm i autoprefixer --save-dev
+```
+
+**webpack.config.js**
+
+```json5 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+module.exports = {
+    entry: "./index.js",
+    output: {
+        filename: "bundle.js",
+        path: __dirname + "/dist"
+    },
+    mode: "production",
+    module: {
+        rules: [
+            {
+                test: /\.js%/,
+                exclude: /(node_modules)/,
+                use: 'babel-loader'
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // Uncomment 'style-loader' to add style to HTML Head
+                    // 'style-loader',
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
+            }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'main.css'
+        })
+    ],
+    watch: true
+}
+
+```
+
+**postcss.config.js**
+
+```json5 
+module.exports = {
+    plugins: {
+        autoprefixer: {
+            // Options
+        }
+    }
+}
+
+```
+
+**package.json**
+
+```json5 
+{{
+...
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
 
 ```

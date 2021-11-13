@@ -6,6 +6,9 @@ p {
   font-style: italic;
   color: $red;
 
+  // require vendor prefixes (use PostCss Autoprefixer)
+  transform: rotate(-10deg);
+
   &:hover {
     color: darken($blue, 5%);
   }
