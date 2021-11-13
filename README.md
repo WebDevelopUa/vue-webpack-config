@@ -118,6 +118,15 @@ module.exports = {
 
 **.babelrc**
 
+``` 
+{
+  "presets": [
+    "@babel/preset-env"
+  ]
+}
+
+```
+
 ## [SASS](https://sass-lang.com/)
 
 ``` 
