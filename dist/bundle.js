@@ -1,0 +1,1 @@
+(()=>{let e=document.createElement("h2");e.innerText="Custom text from: dist/bundle.js",document.body.appendChild(e)})();
