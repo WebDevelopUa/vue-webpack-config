@@ -1,5 +1,8 @@
 import './main.scss'
 
+// eslint-disable-next-line no-unused-vars
+var cx
+
 let paragraph = document.createElement('p')
 
 // Just like the way we did with &&, we can do with || and ??.

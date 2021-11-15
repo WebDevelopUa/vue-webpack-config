@@ -319,4 +319,6 @@ eslint --init
 
 * [Fixing ESLint says “Parsing error: The keyword ‘let’ is reserved.”](https://www.garysieling.com/blog/visual-studio-code-fixing-eslint-says-parsing-error-keyword-let-reserved/)
 
-* [WebStorm ESLint](https://www.jetbrains.com/help/webstorm/eslint.html)
+* [WebStorm ESLint](https://www.jetbrains.com/help/webstorm/eslint.html) - WebStorm =>  File | Settings | Languages &
+  Frameworks | JavaScript | Code Quality Tools | ESLint => Manual ESLint Configuration
+* `TypeError: this.cliEngineCtor is not a constructor` => Solution: update WebStorm to the latest version 2021.2.2 or later
